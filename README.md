@@ -38,4 +38,12 @@ Build the Project
   npm run build
 ```
 
+- Open the Chrome browser and go to the Extensions page. You can access it by typing chrome://extensions in the address bar.
+
+- Enable the Developer mode by toggling the switch at the top-right corner of the Extensions page.
+
+- Click on the "Load unpacked" button and select the **build folder** from the project directory.
+
+- The Advance Bookmark extension should now be installed in your Chrome browser. You can find its icon in the toolbar.
+
 Once the Advance Bookmark extension is installed, you can pin it and click on its icon in the Chrome toolbar to open the bookmark list. From there, you can easily access your saved bookmarks without switching tabs.
