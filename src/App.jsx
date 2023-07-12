@@ -42,7 +42,7 @@ const App = () => {
     <div className="App text-white w-96 h-auto bg-[#1f1f1f]">
       <div className="flex justify-between py-4 px-4 items-center">
         <h1 className="text-lg font-semibold ">Advanced Bookmarks</h1>
-        <a href="https://github.com/nishaaannnt" target="_blank">
+        <a href="https://github.com/nishaaannnt/advance-bookmarks" target="_blank">
           <img className="w-[30px]" src={github} alt="github" />
         </a>
       </div>
