@@ -23,7 +23,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd advance-bookmark
+  cd advance-bookmarks
 ```
 
 Install dependencies
