@@ -46,3 +46,5 @@ Build the Project
 - The Advance Bookmark extension should now be installed in your Chrome browser. You can find its icon in the toolbar.
 
 Once the Advance Bookmark extension is installed, you can pin it and click on its icon in the Chrome toolbar to open the bookmark list. From there, you can easily access your saved bookmarks without switching tabs.
+
+Feel free to fork and use the code or contribute !
