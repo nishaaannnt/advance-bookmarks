@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "./components/Card";
 import { info,close } from "./assets";
-import { AiFillInstagram,AiFillGithub,AiFillLinkedin } from "react-icons/ai";
-import { BiCoffeeTogo } from "react-icons/bi";
+import About from "./pages/About";
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -59,20 +58,7 @@ const App = () => {
         </a>
       </div>
       {about ? (
-        <div className=" p-4 flex-col text-base justify-between bg-[#222222] rounded-lg mx-3">
-          <div className="mx-3">
-          <a href="#" className="card w-auto  h-auto py-2 text-lg px-3 hover:bg-[#0c0c0c] bg-[#2c2c2c] border-white border-2 rounded-md m-1 flex items-center gap-1">Buy me a coffee <BiCoffeeTogo/></a>
-          <p className="mt-5">Access your extension without switching tabs.</p>
-          <p className="font-bold mb-2">Pin the extension for more productivity!</p>
-          </div>
-          <div className="py-2 mt-5">
-            <ul className="flex items-center w-full justify-between bottom-0">
-              <li className="px-3"><a href="" className="flex items-center gap-1" ><AiFillInstagram/>Instagram</a></li>
-              <li className="px-3"><a href="" className="flex items-center gap-1" ><AiFillGithub/>Github</a></li>
-              <li className="px-3"><a href="" className="flex items-center gap-1" ><AiFillLinkedin/>LinkedIn</a></li>
-            </ul>
-          </div>
-        </div>
+        <About/>
       ) : (
         <div>{loading ? <>fetching...</> : <Card bookmark={bookmarks} />}</div>
       )}
