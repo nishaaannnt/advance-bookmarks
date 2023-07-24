@@ -16,7 +16,7 @@
         "_execute_action": {
           "suggested_key": {
             "windows": "Ctrl+Shift+Q",
-            "mac": "MacCtrl+E"
+            "mac": "MacCtrl+Shift+Q"
           },
           "description": "Open Your Extension"
         }
