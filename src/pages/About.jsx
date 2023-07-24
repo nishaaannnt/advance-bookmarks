@@ -1,5 +1,5 @@
 import React from "react";
-import { AiFillInstagram, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { AiFillTwitterCircle, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { BiCoffeeTogo } from "react-icons/bi";
 
 const About = () => {
@@ -31,19 +31,19 @@ const About = () => {
         <div className="py-2 mt-5">
           <ul className="flex items-center w-full justify-between bottom-0">
             <li className="px-3">
-              <a href="" className="flex items-center gap-1">
-                <AiFillInstagram />
-                Instagram
+              <a href="https://twitter.com/xdiziz" target="_blank" className="flex items-center gap-1">
+                <AiFillTwitterCircle />
+                Twitter
               </a>
             </li>
             <li className="px-3">
-              <a href="https://github.com/nishaaannnt/advance-bookmarks" className="flex items-center gap-1">
+              <a href="https://github.com/nishaaannnt/advance-bookmarks" target="_blank" className="flex items-center gap-1">
                 <AiFillGithub />
                 Github
               </a>
             </li>
             <li className="px-3">
-              <a href="https://www.linkedin.com/in/nishantdixitt/" className="flex items-center gap-1">
+              <a href="https://www.linkedin.com/in/nishantdixitt/" target="_blank" className="flex items-center gap-1">
                 <AiFillLinkedin />
                 LinkedIn
               </a>
