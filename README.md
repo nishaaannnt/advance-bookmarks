@@ -1,5 +1,6 @@
 # Advance Bookmark 🔖
 
+![advanceBookmarkGithub](https://github.com/nishaaannnt/advance-bookmarks/assets/100792085/a8217a3b-8a57-4827-885f-be2c9f7bee91)
 
 A Chrome Extension and a useful tool that allows users to access their browser bookmarks without the need to switch tabs. It aims to streamline the browsing experience by providing quick and easy access to frequently visited websites. The extension features a simple and intuitive user interface, making it convenient and efficient for users to manage and access their bookmarks.
 
