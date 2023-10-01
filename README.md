@@ -9,6 +9,8 @@ A Chrome Extension and a useful tool that allows users to access their browser b
 - **Time-Saving**: By avoiding the hassle of switching tabs or searching for bookmarks, users can save valuable time and enhance their productivity.
 - **Simplified UI**: The extension offers a clean and straightforward user interface, ensuring a user-friendly experience for all users.
 
+## Contributing
+ Please go through Contributing guidelines before contributing - [Contributing](CONTRIBUTING.md)! 
 
 ## Run Locally
 
@@ -45,6 +47,8 @@ Build the Project
 - Click on the "Load unpacked" button and select the **build folder** from the project directory.
 
 - The Advance Bookmark extension should now be installed in your Chrome browser. You can find its icon in the toolbar.
+
+
 
 Once the Advance Bookmark extension is installed, you can pin it and click on its icon in the Chrome toolbar to open the bookmark list. From there, you can easily access your saved bookmarks without switching tabs.
 
