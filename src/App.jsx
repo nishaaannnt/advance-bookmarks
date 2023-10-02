@@ -13,7 +13,7 @@ const App = () => {
     setLoading(true);
     // Fetch bookmarks from the browser's bookmarks API
     try {
-      chrome.bookmarks.getTree(function (bookmarkTreeNodes) {
+      chrome.bookmarks?.getTree(function (bookmarkTreeNodes) {
         const bookmarks = [];
         function traverseBookmarks(bookmarkNodes) {
           for (let node of bookmarkNodes) {
@@ -38,7 +38,7 @@ const App = () => {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [bookmarks]);
 
   const handleAbout = () => {
     setAbout(!about);
@@ -48,14 +48,14 @@ const App = () => {
     <div className="App text-white w-96 h-auto min-h-[600px] bg-[#1f1f1f]">
       <div className="flex justify-between py-4 px-4 items-center">
         <h1 className="text-lg font-semibold ">Advanced Bookmarks</h1>
-        <a
+        <button
           onClick={handleAbout}
           className="hover:cursor-pointer"
           target="_blank"
         >{
           about ? <img src={close} alt="x" className="w-[15px]" />:<img src={info} alt="i" className="w-[25px]" />
         }
-        </a>
+        </button>
       </div>
       {about ? (
         <About/>
