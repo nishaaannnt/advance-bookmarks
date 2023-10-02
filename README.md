@@ -14,6 +14,8 @@ A Chrome Extension and a useful tool that allows users to access their browser b
 
 ## Run Locally
 
+**Please make your own branch if any changes are to be made eg. feature/dark, bug/bookmark-name**
+
 To install the Advance Bookmark Chrome Extension locally using npm, follow these steps:
 
 Clone the project
