@@ -102,17 +102,39 @@ const App = () => {
                   >
                     {(provided) => (
                       <li
-                        className="bg-[#333] p-2 rounded-md mb-2 flex items-center hover:bg-[#444] transition-colors"
+                        className="bg-[#333] p-2 rounded-md mb-2 flex items-center hover:bg-[#444] transition-colors relative" // Added relative positioning
                         ref={provided.innerRef}
                         {...provided.draggableProps}
-                        {...provided.dragHandleProps}
                       >
                         <img
                           src={bookmark.thumbnailUrl}
                           alt="Bookmark Icon"
                           className="w-6 h-6 mr-2"
                         />
-                        {bookmark.title}
+                        <span
+                          className="truncate max-w-[70%] cursor-pointer"
+                          onClick={() => window.open(bookmark.url, '_blank')}
+                        >
+                          {bookmark.title.length > 30
+                            ? `${bookmark.title.substring(0, 30)}...`
+                            : bookmark.title}
+                        </span>
+                        <div
+                          {...provided.dragHandleProps}
+                          className="w-4 h-4 cursor-grab absolute top-0 right-0 m-2" // Positioned to the extreme right
+                        >
+                          {/* Replaced the icon with a vertical dots icon */}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            className="bi bi-three-dots-vertical"
+                            viewBox="0 0 16 16"
+                          >
+                            <path d="M9 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM9 6a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm0 4a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm0 4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+                          </svg>
+                        </div>
                       </li>
                     )}
                   </Draggable>
