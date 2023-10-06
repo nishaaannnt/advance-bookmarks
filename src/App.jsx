@@ -106,6 +106,7 @@ const App = () => {
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                       >
+                      <div onClick={() => window.open(bookmark.url, '_blank')} className='flex w-full hover:cursor-pointer'>
                         <img
                           src={bookmark.thumbnailUrl}
                           alt="Bookmark Icon"
@@ -113,12 +114,12 @@ const App = () => {
                         />
                         <span
                           className="truncate max-w-[70%] cursor-pointer"
-                          onClick={() => window.open(bookmark.url, '_blank')}
                         >
                           {bookmark.title.length > 30
                             ? `${bookmark.title.substring(0, 30)}...`
                             : bookmark.title}
                         </span>
+                        </div>
                         <div
                           {...provided.dragHandleProps}
                           className="w-4 h-4 cursor-grab absolute top-0 right-0 m-2" // Positioned to the extreme right
