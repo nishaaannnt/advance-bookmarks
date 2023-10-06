@@ -93,11 +93,11 @@ const App = () => {
 
 
   return (
-    <div className="App dark:text-white w-96 h-auto min-h-[600px] dark:bg-black bg-white text-black  p-4 rounded-md shadow-md">
+    <div className="App dark:text-white w-96 h-auto min-h-[600px] dark:bg-[#1f1f1f] bg-white text-black  p-4 rounded-md shadow-md">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-xl font-semibold">Advanced Bookmarks</h1>
         {darkMode === 'dark' ? (
-          <button className="bg-black-700 hover: bg-black  rounded-3x1 p-4  " onClick={toggleDarkMode}>
+          <button className="  rounded-3x1 p-4  " onClick={toggleDarkMode}>
             {''}
             <GoSun size={20}/>
           </button>
