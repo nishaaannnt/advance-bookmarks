@@ -53,6 +53,12 @@ Create a new branch for your contribution.
 
 Implement your feature or fix bugs. Please ensure your code follows the existing coding style.
 
+* Watch the Project Changes During Development 
+```bash
+  npm run watch
+```
+- Note : Wait for the build to be completed.
+
 **4. Test your changes:**
 
 Ensure that your changes work as expected and do not introduce new issues.
