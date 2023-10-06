@@ -1,7 +1,7 @@
 /*global chrome*/
 import React, { useState, useEffect } from 'react';
 import Card from './components/Card';
-import { info, close, GoSun, FaMoon, BsInfo, AiOutlineClose, FaInfo, SlOptionsVertical } from './assets';
+import { info, close, GoSun, FaMoon, AiOutlineClose, FaInfo, SlOptionsVertical } from './assets';
 import About from './pages/About';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 

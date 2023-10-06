@@ -12,7 +12,10 @@ const About = () => {
             
             className="card w-auto  hover:cursor-pointer h-auto py-2 text-lg px-3 dark:hover:bg-[#0c0c0c] dark:bg-[#2c2c2c] dark:border-white  hover:bg-[#9c9b9b] bg-[#b2b0b0] border-black border-2 rounded-md m-1 r flex items-center gap-1"
           >
+            
+            <a href="https://www.buymeacoffee.com/lazyjinchuriki" target="_blank" rel="noreferrer" className="flex items-center gap-1">
             Buy me a coffee <BiCoffeeTogo />
+              </a>
           </button>
           <p className=" text-sm my-2 dark:text-red-400 text-[#ee4b2b]">Payment Gateway will be added soon, till then enjoy using the extension :D</p>
           <p className="mt-5">Access all your extension in a list without switching tabs.</p>
