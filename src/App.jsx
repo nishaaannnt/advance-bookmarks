@@ -1,14 +1,16 @@
 /*global chrome*/
 import React, { useState, useEffect } from 'react';
 import Card from './components/Card';
-import { info, close } from './assets';
+import { info, close, GoSun, FaMoon, AiOutlineClose, FaInfo, SlOptionsVertical } from './assets';
 import About from './pages/About';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+
 
 const App = () => {
   const [loading, setLoading] = useState(false);
   const [bookmarks, setBookmarks] = useState([]);
   const [about, setAbout] = useState(false);
+  const [darkMode, setDarkMode] = useState(null)
 
   useEffect(() => {
     setLoading(true);
@@ -67,11 +69,46 @@ const App = () => {
     setBookmarks(reorderedBookmarks);
   };
 
+  useEffect(() => {
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+      setDarkMode('dark');
+    }
+    else {
+      setDarkMode('light');
+    }
+  }, [])
+
+  useEffect(() => {
+    if (darkMode === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
+
+  const  toggleDarkMode = () => {
+    setDarkMode(darkMode === "dark" ? "light" : "dark");
+  };
+
+
+
   return (
-    <div className="App text-white w-96 h-auto min-h-[600px] bg-[#1f1f1f] p-4 rounded-md shadow-md">
+    <div className="App dark:text-white w-96 h-auto min-h-[600px] dark:bg-[#1f1f1f] bg-white text-black  p-4 rounded-md shadow-md">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-xl font-semibold">Advanced Bookmarks</h1>
-        <button
+        {darkMode === 'dark' ? (
+          <button className="  rounded-3x1 p-4  " onClick={toggleDarkMode}>
+            {''}
+            <GoSun size={20}/>
+          </button>
+        ): 
+          <button className=" bg-grey-100 hover: bg-grey-300 rounded-3x1 p-4 " onClick={toggleDarkMode}>
+            {''}
+            <FaMoon size={20} />
+        </button>
+      }
+      {darkMode === 'dark' ? (
+          <button
           onClick={handleAbout}
           className="hover:cursor-pointer"
           target="_blank"
@@ -82,6 +119,18 @@ const App = () => {
             <img src={info} alt="i" className="w-6 h-6" />
           )}
         </button>
+        ): 
+        <button
+          onClick={handleAbout}
+          className="hover:cursor-pointer"
+          target="_blank">
+            {about ? (
+                <AiOutlineClose size={20}  />
+              ) : (
+                <FaInfo size={20}/>
+                )}
+        </button>
+      }
       </div>
       {about ? (
         <About />
@@ -102,7 +151,7 @@ const App = () => {
                   >
                     {(provided) => (
                       <li
-                        className="bg-[#333] p-2 rounded-md mb-2 flex items-center hover:bg-[#444] transition-colors relative" // Added relative positioning
+                        className="dark:bg-[#333] bg-[#b6b4b4] p-2 rounded-md mb-2 flex items-center dark:hover:bg-[#444]  hover:bg-[#9d9d9dde] transition-colors relative" // Added relative positioning
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                       >
@@ -125,16 +174,9 @@ const App = () => {
                           className="w-4 h-4 cursor-grab absolute top-0 right-0 m-2" // Positioned to the extreme right
                         >
                           {/* Replaced the icon with a vertical dots icon */}
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            className="bi bi-three-dots-vertical"
-                            viewBox="0 0 16 16"
-                          >
-                            <path d="M9 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM9 6a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm0 4a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm0 4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
-                          </svg>
+                          <SlOptionsVertical/>
+                            {/* <path d="M9 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM9 6a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm0 4a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm0 4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" /> */}
+                          
                         </div>
                       </li>
                     )}
