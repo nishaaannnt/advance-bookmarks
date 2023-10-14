@@ -14,10 +14,23 @@ chrome.bookmarks.onCreated.addListener((id, bookmark)=>{
 });
 
 chrome.bookmarks.onRemoved.addListener((id)=>{
-  createdBookmarks = createdBookmarks.filter(item=>item.id !== id);
-  removedBookmarksIds.push(id);
+  const indexRemovedBookmark = createdBookmarks.findIndex(item=>item.id === id);
+  if(indexRemovedBookmark !== -1){
+    createdBookmarks.splice(indexRemovedBookmark,1);
+  }else {
+    removedBookmarksIds.push(id);
+  }
 });
 
 chrome.runtime.onConnect.addListener((port)=>{
-  
+  port.onMessage.addListener((message)=>{
+    if(message.action === "createdBookmark"){
+      port.postMessage(createdBookmarks);
+      createdBookmarks = [];
+    }
+    if(message.action === "removeBookmark"){
+      port.postMessage(removedBookmarksIds);
+      removedBookmarksIds = [];
+    }
+  });
 });
