@@ -4,25 +4,7 @@ import Card from './components/Card';
 import { info, close, GoSun, FaMoon, AiOutlineClose, FaInfo, SlOptionsVertical } from './assets';
 import About from './pages/About';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import { connectToServiceWorker, disconnectFromServiceWorker, fetchAddBookmarks, fetchRemoveBookmarks } from './util/fetchData';
 
-const fetchChangedBookmarks = async (storedBookmarksText)=>{
-  if(!storedBookmarksText) return;
-  let storedBookmarksObj = JSON.parse(storedBookmarksText);
-  const port = connectToServiceWorker();
-  const addBookmarks = await fetchAddBookmarks(port);
-  if(addBookmarks.length > 0){
-    storedBookmarksObj.push(...addBookmarks);
-  }
-  
-  const removeBookmarksIds = await fetchRemoveBookmarks(port);
-  if(removeBookmarksIds.length > 0){
-    storedBookmarksObj = storedBookmarksObj.filter(item=> !removeBookmarksIds.includes(item.id));
-  }
-  disconnectFromServiceWorker(port);
-  localStorage.setItem('bookmarks', JSON.stringify(storedBookmarksObj));
-  return storedBookmarksObj;
-} 
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -35,9 +17,7 @@ const App = () => {
     try {
       const storedBookmarks = localStorage.getItem('bookmarks');
       if (storedBookmarks) {
-        fetchChangedBookmarks(storedBookmarks).then((data)=>{
-          setBookmarks(data);
-        });
+        setBookmarks(JSON.parse(storedBookmarks));
       } else {
         // Fetch bookmarks from the browser's bookmarks API as you did before
         chrome.bookmarks?.getTree(function (bookmarkTreeNodes) {

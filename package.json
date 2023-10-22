@@ -25,9 +25,9 @@
   "watch": {
     "build": {
       "patterns": [
-        "src","public"
+        "src"
       ],
-      "extensions": "js,jsx,css,json"
+      "extensions": "js,jsx,css"
     }
   },
   "eslintConfig": {
