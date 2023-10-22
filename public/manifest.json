@@ -7,22 +7,18 @@
     ],
     "description": "This is a Chrome extension built with React",
     "action": {
-      "default_popup": "index.html"
-    },
-    "icons":{
-      "128":"logo.png"
-    },
-    "commands": {
-      "_execute_action": {
-        "suggested_key": {
-          "windows": "Ctrl+Shift+Q",
-          "mac": "MacCtrl+Shift+Q"
-        },
-        "description": "Open Your Extension"
+        "default_popup": "index.html"
+      },
+      "icons":{
+        "128":"logo.png"
+      },
+      "commands": {
+        "_execute_action": {
+          "suggested_key": {
+            "windows": "Ctrl+Shift+Q",
+            "mac": "MacCtrl+Shift+Q"
+          },
+          "description": "Open Your Extension"
+        }
       }
-    },
-    "background":{
-      "service_worker": "service_worker.js",
-      "type": "module"
-    }
 }
